@@ -15,10 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MainController::class, 'getPageData']);
-Route::get('/addimage', [MainController::class, 'addNewImage']);
-Route::post('/saveimage', [MainController::class,'saveImage']);
-Route::get('/all', [MainController::class, 'getAll']);
-Route::get('/delete/{id}', [MainController::class, 'delete']);
-Route::get('/addabout', [MainController::class, 'addAbout']);
-Route::post('/saveabout', [MainController::class,'saveAbout']);
-Route::get('/deleteabout/{id}', [MainController::class, 'deleteAbout']);
+Route::get('/verify', [MainController::class, 'verify']);
+Route::post('/verify', [MainController::class, 'giveAccess']);
+
+
+Route::middleware('customAuth')->group(function () {
+    Route::get('/addimage', [MainController::class, 'addNewImage'])->middleware('customAuth');
+    Route::post('/saveimage', [MainController::class, 'saveImage']);
+    Route::get('/all', [MainController::class, 'getAll']);
+    Route::get('/delete/{id}', [MainController::class, 'delete']);
+    Route::get('/addabout', [MainController::class, 'addAbout']);
+    Route::post('/saveabout', [MainController::class, 'saveAbout']);
+    Route::get('/deleteabout/{id}', [MainController::class, 'deleteAbout']);
+});
