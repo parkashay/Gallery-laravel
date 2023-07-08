@@ -3,21 +3,22 @@
         <div>
             <section>
                 <h2>Magna feugiat sed adipiscing</h2>
-                <p>Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et scelerisque turpis ipsum eget quis orci mattis aliquet. Maecenas fringilla et ante at lorem et ipsum. Dolor nulla eu bibendum sapien. Donec non pharetra dui. Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et scelerisque turpis ipsum.</p>
+                <p>Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et scelerisque turpis ipsum eget
+                    quis orci mattis aliquet. Maecenas fringilla et ante at lorem et ipsum. Dolor nulla eu bibendum
+                    sapien. Donec non pharetra dui. Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et
+                    scelerisque turpis ipsum.</p>
             </section>
             <section>
                 <h2>Follow me on ...</h2>
                 <ul class="icons">
-                    <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                    <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                    <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-                    <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-                    <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                    <li><a href="https://github.com/parkashay" class="icon brands fa-github" target="_blank"><span
+                                class="label">GitHub</span></a></li>
+                    <li><a href="https://www.linkedin.com/in/prakash-poudel-2a8a1b1a9/" target="_blank"
+                            class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
                 </ul>
             </section>
             <p class="copyright">
-                &copy; Unttled. Design: <a href="http://html5up.net">HTML5 UP</a>.
+                &copy; <a href="/addimage"> Prakash Poudel </a>.
             </p>
         </div>
         <div>
