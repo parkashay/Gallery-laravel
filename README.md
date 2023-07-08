@@ -1,4 +1,4 @@
-# A simple gallery
+# A Photo Gallery Web Application made with Laravel.
 ## frontend from : html5up's Multiverse
 
 ### One can upload photos and store them in the database. The uploaded images can later on be deleted from the admin dashboard.
