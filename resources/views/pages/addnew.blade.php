@@ -1,7 +1,6 @@
 @extends('layout')
 @section('title', 'Add new Image')
 @section('content')
-    @include('components.header')
     @if (session()->has('message'))
         <div style="color: green; font-weight:600">{{ session('message') }}</div>
     @endif

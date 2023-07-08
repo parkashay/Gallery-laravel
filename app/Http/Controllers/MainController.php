@@ -8,15 +8,14 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
-use function PHPSTORM_META\type;
 
 class MainController extends Controller
 {
     public function getPageData()
     {
         $images = Image::all();
-        $about = About::all();
-        return view('welcome');
+        $about = About::latest()->first();
+        return view('welcome')->with(['images' => $images, 'about' => $about]);
     }
 
     public function addNewImage()
@@ -44,8 +43,6 @@ class MainController extends Controller
         } catch (Exception $e) {
             return redirect()->back()->with(['message' => $e->getMessage()]);
         }
-        // return redirect()->back()->with(['message' => 'Image Uploaded Successfully']);
-
     }
 
     public function getAll()
@@ -62,25 +59,34 @@ class MainController extends Controller
             File::delete($imagePath);
             $image->delete();
             return redirect()->back()->with(['message' => 'Image Deleted Successfully']);
-        }
-        else{
+        } else {
             return redirect()->back()->with(['message' => 'Image Not Found']);
         }
     }
 
-    public function addAbout(){
-        return view('pages.addabout');
+    public function addAbout()
+    {
+        $about = About::latest()->first();
+        $aboutContent = About::all();
+        return view('pages.addabout')->with(['about' => $about, 'aboutContent' => $aboutContent]);
     }
-    public function saveAbout(Request $request){
+    public function saveAbout(Request $request)
+    {
         $request->validate([
-            'heading' =>'required',
-            'description' =>'required',
+            'heading' => 'required',
+            'description' => 'required',
         ]);
 
-        $about = About::create([
+        About::create([
             'heading' => $request->heading,
             'description' => $request->description
         ]);
         return redirect()->back()->with(['message' => 'About Uploaded Successfully']);
+    }
+    public function deleteAbout($id)
+    {
+        $about = About::find($id);
+        $about->delete();
+        return redirect()->back()->with(['message' => 'About Deleted Successfully']);
     }
 }

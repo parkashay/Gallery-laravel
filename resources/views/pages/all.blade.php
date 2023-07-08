@@ -2,7 +2,6 @@
 @section('title', 'All Images')
 <link rel="stylesheet" href="{{ asset('css/all.css') }}">
 @section('content')
-    @include('.components.header')
     @if (session()->has('message'))
         <div>{{ session('message') }}</div>
     @endif

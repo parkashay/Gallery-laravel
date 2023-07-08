@@ -13,6 +13,8 @@
 </head>
 
 <body class="is-preload">
+    @include('components.header')
+    @include('components.footer')
     <div class="wrapper">
         @yield('content')
     </div>

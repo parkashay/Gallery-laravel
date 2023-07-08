@@ -1,8 +1,6 @@
 @extends('layout')
 @section('title', 'Add About')
 @section('content')
-@include('components.header')
-@include('components.footer')
 
 @if (session() -> has('message'))
     <div style="color: green">{{session('message')}}</div>
@@ -14,6 +12,21 @@
         <textarea name="description" rows="3" placeholder="Enter Description"></textarea>
         <button type="submit">Submit</button>
     </form>
+
+    <table>
+        <tr>
+            <th>Heading</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+        @foreach ($aboutContent as $ab)
+           <tr>
+            <td>{{$ab->heading}}</td>
+            <td>{{$ab->description}}</td>
+            <td><a href="/deleteabout/{{$ab->id}}">Delete</a></td>
+           </tr>
+        @endforeach
+    </table>
     <style>
         .addabout {
             display: flex;
