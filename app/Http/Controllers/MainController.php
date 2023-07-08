@@ -89,4 +89,17 @@ class MainController extends Controller
         $about->delete();
         return redirect()->back()->with(['message' => 'About Deleted Successfully']);
     }
+    public function verify(){
+        return view('pages.verify');
+    }
+    
+    public function giveAccess(Request $request){
+        $request->validate([
+            'key' => 'required'
+        ]);
+        if($request->key === 'lol'){
+            session(['admin' => 'admin']);
+            return redirect('/');
+        }
+    }
 }
