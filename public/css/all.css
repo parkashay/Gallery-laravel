@@ -1,0 +1,25 @@
+.all-page{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+.image-container{
+    height: 200px;
+    aspect-ratio: 16/9;
+    display: flex;
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.delete{
+    position: absolute;
+    align-self: flex-end;
+    z-index: 4;
+    background-color: red;
+    width: 355px;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+}
