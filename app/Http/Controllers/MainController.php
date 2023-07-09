@@ -97,7 +97,7 @@ class MainController extends Controller
         $request->validate([
             'key' => 'required'
         ]);
-        if($request->key === 'lol'){
+        if($request->key === env('ADMIN_KEY')){
             session(['admin' => 'admin']);
             return redirect('/');
         }
